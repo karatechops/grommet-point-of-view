@@ -1,5 +1,5 @@
 import React from 'react';
-import BrandLogo from 'grommet/components/icons/base/PlatformHpi';
+import BrandLogo from 'grommet/components/icons/base/PlatformAruba';
 
 export default function Logo (props) {
   return (
