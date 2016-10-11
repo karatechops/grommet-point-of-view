@@ -36,7 +36,8 @@ function anim({target}) {
   const building1 = {
     roof1: target.find({name: 'building1Roof1'}).findAllInChildren(),
     roof2: target.find({name: 'building1Roof2'}),
-    columnsLong: target.find({name: 'building1ColumnsLong'}).findAllInChildren(),
+    columnsLong: target.find({name: 'building1ColumnsLong'})
+      .findAllInChildren(),
     columns1: target.find({name: 'building1Columns1'}).findAllInChildren(),
     columns2: target.find({name: 'building1Columns2'}).findAllInChildren()
   };
@@ -88,70 +89,110 @@ function anim({target}) {
   return new TimelineMax({paused: false})
 
     // Stadium
-    .fromTo(stadiumOutline, .5, {drawSVG:'50% 50%'}, {drawSVG:'102%', delay:'.1', ease:Power1.easeOut}, 'stadium')
-    .fromTo(stadiumLines, .5, {drawSVG:'50% 50%'}, {drawSVG:'102%', delay:'.15', ease:Power1.easeOut}, 'stadium')
-    .fromTo(flag1, .4, {drawSVG:0}, {drawSVG:'102%', delay:'.2', ease:Power1.easeOut}, 'stadium')
-    .fromTo(flag2, .4, {drawSVG:0}, {drawSVG:'102%', delay:'0', ease:Power1.easeOut}, 'stadium')
-    .fromTo(flag3, .4, {drawSVG:0}, {drawSVG:'102%', delay:'.2', ease:Power1.easeOut}, 'stadium')
+    .fromTo(stadiumOutline, .5, {drawSVG:'50% 50%'}, {drawSVG:'102%', 
+      delay:'.1', ease:Power1.easeOut}, 'stadium')
+    .fromTo(stadiumLines, .5, {drawSVG:'50% 50%'}, {drawSVG:'102%', 
+      delay:'.15', ease:Power1.easeOut}, 'stadium')
+    .fromTo(flag1, .4, {drawSVG:0}, {drawSVG:'102%', delay:'.2', 
+      ease:Power1.easeOut}, 'stadium')
+    .fromTo(flag2, .4, {drawSVG:0}, {drawSVG:'102%', delay:'0', 
+      ease:Power1.easeOut}, 'stadium')
+    .fromTo(flag3, .4, {drawSVG:0}, {drawSVG:'102%', delay:'.2', 
+      ease:Power1.easeOut}, 'stadium')
 
     // Tree 2
     .add('tree2', .5)
-    .fromTo(tree2Top, .4, {drawSVG:'50% 50%'}, {drawSVG:'100%', ease:Power1.easeOut}, 'tree2')
-    .fromTo(tree2Trunk, .4, {drawSVG:'100% 100%'}, {drawSVG:'102%', ease:Power1.easeOut}, 'tree2')
+    .fromTo(tree2Top, .4, {drawSVG:'50% 50%'}, {drawSVG:'100%', 
+      ease:Power1.easeOut}, 'tree2')
+    .fromTo(tree2Trunk, .4, {drawSVG:'100% 100%'}, {drawSVG:'102%', 
+      ease:Power1.easeOut}, 'tree2')
     
     // Guy
     .add('guy', .35)
-    .fromTo(guy.phone, .15, {drawSVG:'0'}, {drawSVG:'102%', ease:Power1.easeOut}, 'guy')
-    .fromTo(guy.arm, .2, {drawSVG:'0'}, {drawSVG:'102%', delay:'.1', ease:Power1.easeOut}, 'guy')
-    .fromTo(guy.body, .4, {drawSVG:'100% 100%'}, {drawSVG:'102%', delay:'.2', ease:Power1.easeOut}, 'guy')
-    .fromTo(guy.body2, .3, {drawSVG:'0'}, {drawSVG:'102%', delay:'.35', ease:Power1.easeOut}, 'guy')
-    .fromTo(guy.face, .4, {drawSVG:'0'}, {drawSVG:'102%', delay:'.35', ease:Power1.easeOut}, 'guy')
-    .fromTo(guy.hat, .25, {drawSVG:'15%, 15%'}, {drawSVG:'102%', delay:'.39', ease:Power1.easeOut}, 'guy')
-    .fromTo(guy.hood, .25, {drawSVG:'0'}, {drawSVG:'102%', delay:'.4', ease:Power1.easeOut}, 'guy')
+    .fromTo(guy.phone, .15, {drawSVG:'0'}, {drawSVG:'102%', 
+      ease:Power1.easeOut}, 'guy')
+    .fromTo(guy.arm, .2, {drawSVG:'0'}, {drawSVG:'102%', delay:'.1', 
+      ease:Power1.easeOut}, 'guy')
+    .fromTo(guy.body, .4, {drawSVG:'100% 100%'}, {drawSVG:'102%', delay:'.2', 
+      ease:Power1.easeOut}, 'guy')
+    .fromTo(guy.body2, .3, {drawSVG:'0'}, {drawSVG:'102%', delay:'.35', 
+      ease:Power1.easeOut}, 'guy')
+    .fromTo(guy.face, .4, {drawSVG:'0'}, {drawSVG:'102%', delay:'.35', 
+      ease:Power1.easeOut}, 'guy')
+    .fromTo(guy.hat, .25, {drawSVG:'15%, 15%'}, {drawSVG:'102%', delay:'.39', 
+      ease:Power1.easeOut}, 'guy')
+    .fromTo(guy.hood, .25, {drawSVG:'0'}, {drawSVG:'102%', delay:'.4', 
+      ease:Power1.easeOut}, 'guy')
     
     // Large building
     .add('building1', .6)
-    .fromTo(building1.roof1[0], .2, {drawSVG:'100%, 100%'}, {drawSVG:'102%', delay:'.2', ease:Power1.easeOut}, 'building1')
-    .fromTo(building1.columns1, .2, {drawSVG:'100%, 100%'}, {drawSVG:'102%', delay:'.2', ease:Power1.easeOut}, 'building1')
-    .fromTo(building1.columnsLong, .35, {drawSVG:'0'}, {drawSVG:'102%', delay:'.3', ease:Power1.easeOut}, 'building1')
-    .fromTo(building1.roof1[1], .2, {drawSVG:'0%, 0%'}, {drawSVG:'102%', delay:'.4', ease:Power1.easeOut}, 'building1')
-    .fromTo(building1.columns2, .2, {drawSVG:'100%, 100%'}, {drawSVG:'102%', delay:'.43', ease:Power1.easeOut}, 'building1')
-    .fromTo(building1.roof2, .27, {drawSVG:'50%, 50%'}, {drawSVG:'102%', delay:'.44', ease:Power1.easeOut}, 'building1')
+    .fromTo(building1.roof1[0], .2, {drawSVG:'100%, 100%'}, {drawSVG:'102%',  
+      delay:'.2', ease:Power1.easeOut}, 'building1')
+    .fromTo(building1.columns1, .2, {drawSVG:'100%, 100%'}, {drawSVG:'102%',  
+      delay:'.2', ease:Power1.easeOut}, 'building1')
+    .fromTo(building1.columnsLong, .35, {drawSVG:'0'}, {drawSVG:'102%', 
+      delay:'.3', ease:Power1.easeOut}, 'building1')
+    .fromTo(building1.roof1[1], .2, {drawSVG:'0%, 0%'}, {drawSVG:'102%',  
+      delay:'.4', ease:Power1.easeOut}, 'building1')
+    .fromTo(building1.columns2, .2, {drawSVG:'100%, 100%'}, {drawSVG:'102%',  
+      delay:'.43', ease:Power1.easeOut}, 'building1')
+    .fromTo(building1.roof2, .27, {drawSVG:'50%, 50%'}, {drawSVG:'102%',  
+      delay:'.44', ease:Power1.easeOut}, 'building1')
 
     // Tree 1
     .add('tree1', 1.1)
-    .fromTo(tree1Top, .4, {drawSVG:'50%, 50%', transformOrigin:'center center', rotation:'180'}, {drawSVG:'100%', ease:Power1.easeOut}, 'tree1')
-    .fromTo(tree1Trunk, .4, {drawSVG:'100% 100%'}, {drawSVG:'102%', ease:Power1.easeOut}, 'tree1')
+    .fromTo(tree1Top, .4, {drawSVG:'50%, 50%', transformOrigin:'center center', 
+      rotation:'180'}, {drawSVG:'100%', ease:Power1.easeOut}, 'tree1')
+    .fromTo(tree1Trunk, .4, {drawSVG:'100% 100%'}, {drawSVG:'102%', 
+      ease:Power1.easeOut}, 'tree1')
 
     // Car
     .add('car', 1.3)
-    .fromTo(car.hood, .2, {drawSVG:'50%, 50%'}, {drawSVG:'102%', ease:Power1.easeOut}, 'car')
-    .fromTo(car.top, .2, {drawSVG:'0'}, {drawSVG:'102%', delay:'.1', ease:Power1.easeOut}, 'car')
-    .fromTo(car.bottom, .2, {drawSVG:'0'}, {drawSVG:'102%', delay:'.1', ease:Power1.easeOut}, 'car')
-    .fromTo(car.wheel2, .2, {drawSVG:'0'}, {drawSVG:'102%', delay:'.1', ease:Power1.easeOut}, 'car')
-    .fromTo(car.wheel1, .2, {drawSVG:'0'}, {drawSVG:'102%', delay:'.1', ease:Power1.easeOut}, 'car')
+    .fromTo(car.hood, .2, {drawSVG:'50%, 50%'}, {drawSVG:'102%',
+      ease:Power1.easeOut}, 'car')
+    .fromTo(car.top, .2, {drawSVG:'0'}, {drawSVG:'102%', delay:'.1',
+      ease:Power1.easeOut}, 'car')
+    .fromTo(car.bottom, .2, {drawSVG:'0'}, {drawSVG:'102%', delay:'.1',
+      ease:Power1.easeOut}, 'car')
+    .fromTo(car.wheel2, .2, {drawSVG:'0'}, {drawSVG:'102%', delay:'.1',
+      ease:Power1.easeOut}, 'car')
+    .fromTo(car.wheel1, .2, {drawSVG:'0'}, {drawSVG:'102%', delay:'.1',
+      ease:Power1.easeOut}, 'car')
     
     // Woman
     .add('woman', 1.1)
-    .fromTo(woman.back, .2, {drawSVG:'0'}, {drawSVG:'102%', delay:'.1', ease:Power1.easeOut}, 'woman')
-    .fromTo(woman.arm[0], .3, {drawSVG:'0'}, {drawSVG:'102%', delay:'.1', ease:Power1.easeOut}, 'woman')
-    .fromTo(woman.hair, .3, {drawSVG:'100%, 100%'}, {drawSVG:'102%', delay:'.1', ease:Power1.easeOut}, 'woman')
-    .fromTo(woman.face, .3, {drawSVG:'0'}, {drawSVG:'102%', delay:'.1', ease:Power1.easeOut}, 'woman')
-    .fromTo(woman.phone, .2, {drawSVG:'0'}, {drawSVG:'102%', delay:'.3', ease:Power1.easeOut}, 'woman')
-    .fromTo(woman.front, .3, {drawSVG:'0'}, {drawSVG:'102%', delay:'.3', ease:Power1.easeOut}, 'woman')
-    .fromTo(woman.arm[1], .3, {drawSVG:'0'}, {drawSVG:'102%', delay:'.3', ease:Power1.easeOut}, 'woman')
+    .fromTo(woman.back, .2, {drawSVG:'0'}, {drawSVG:'102%', delay:'.1', 
+      ease:Power1.easeOut}, 'woman')
+    .fromTo(woman.arm[0], .3, {drawSVG:'0'}, {drawSVG:'102%', delay:'.1', 
+      ease:Power1.easeOut}, 'woman')
+    .fromTo(woman.hair, .3, {drawSVG:'100%, 100%'}, {drawSVG:'102%', 
+      delay:'.1', ease:Power1.easeOut}, 'woman')
+    .fromTo(woman.face, .3, {drawSVG:'0'}, {drawSVG:'102%', delay:'.1', 
+      ease:Power1.easeOut}, 'woman')
+    .fromTo(woman.phone, .2, {drawSVG:'0'}, {drawSVG:'102%', delay:'.3', 
+      ease:Power1.easeOut}, 'woman')
+    .fromTo(woman.front, .3, {drawSVG:'0'}, {drawSVG:'102%', delay:'.3', 
+      ease:Power1.easeOut}, 'woman')
+    .fromTo(woman.arm[1], .3, {drawSVG:'0'}, {drawSVG:'102%', delay:'.3', 
+      ease:Power1.easeOut}, 'woman')
 
     // Buildings left side
     .add('building2', 1.4)
-    .fromTo(building2.structure1, .35, {drawSVG:'100%, 100%'}, {drawSVG:'102%', ease:Power1.easeOut}, 'building2')
-    .fromTo(building2.structure2, .35, {drawSVG:'0'}, {drawSVG:'102%', delay:'.2', ease:Power1.easeOut}, 'building2')
-    .fromTo(building2.structure3, .35, {drawSVG:'0'}, {drawSVG:'102%', delay:'.45', ease:Power1.easeOut}, 'building2')
+    .fromTo(building2.structure1, .35, {drawSVG:'100%, 100%'}, {drawSVG:'102%',
+      ease:Power1.easeOut}, 'building2')
+    .fromTo(building2.structure2, .35, {drawSVG:'0'}, {drawSVG:'102%', 
+      delay:'.2', ease:Power1.easeOut}, 'building2')
+    .fromTo(building2.structure3, .35, {drawSVG:'0'}, {drawSVG:'102%', 
+      delay:'.45', ease:Power1.easeOut}, 'building2')
 
     // Buildings right side
     .add('building3', 1.4)
-    .fromTo(building3.lines, .35, {drawSVG:'100%, 100%'}, {drawSVG:'102%', ease:Power1.easeOut}, 'building2')
-    .fromTo(building3.structure1, .35, {drawSVG:'100%, 100%'}, {drawSVG:'102%', ease:Power1.easeOut}, 'building2')
-    .fromTo(building3.structure2, .35, {drawSVG:'100%, 100%'}, {drawSVG:'102%', delay:'.25', ease:Power1.easeOut}, 'building2')
+    .fromTo(building3.lines, .35, {drawSVG:'100%, 100%'}, 
+      {drawSVG:'102%', ease:Power1.easeOut}, 'building2')
+    .fromTo(building3.structure1, .35, {drawSVG:'100%, 100%'}, 
+      {drawSVG:'102%', ease:Power1.easeOut}, 'building2')
+    .fromTo(building3.structure2, .35, {drawSVG:'100%, 100%'}, 
+      {drawSVG:'102%', delay:'.25', ease:Power1.easeOut}, 'building2')
 
     .add(TweenMax.fromTo(guyTicket, .5, {opacity:'0', y:'-10%'}, {
       repeat: -1,
@@ -163,7 +204,8 @@ function anim({target}) {
       ease: Power1.easeOut
     }), 1)
 
-    .add(TweenMax.fromTo(building1Signal, .5, {opacity:'0', scale:'.5', transformOrigin:'bottom center'}, {
+    .add(TweenMax.fromTo(building1Signal, .5, {opacity:'0', scale:'.5', 
+    transformOrigin:'bottom center'}, {
       repeat: -1,
       repeatDelay: 3,
       opacity: 1,
@@ -173,7 +215,8 @@ function anim({target}) {
       ease: Power1.easeOut
     }), 4)
 
-    .add(TweenMax.fromTo(carPin, .5, {opacity:'0', scale:'.5', transformOrigin:'bottom center'}, {
+    .add(TweenMax.fromTo(carPin, .5, {opacity:'0', scale:'.5', 
+    transformOrigin:'bottom center'}, {
       repeat: -1,
       repeatDelay: 3,
       opacity: 1,
@@ -196,7 +239,8 @@ class Intro extends Component {
   render () {
     return (
       <div>
-        <svg style={{width:'100%'}}id="stadium" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 911.3 167.5">
+        <svg style={{width:'100%'}}id="stadium" 
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 911.3 167.5">
           <path name="stadiumOutline" className="svg-stroke--dark" d="M348.8 162l-6.5-48.4s22.6-25.5 91.4-25.5c72.2 0 91.4 25.5 91.4 25.5l-6.2 48.4"/>
           <path className="svg-fill--white" d="M356.02 74.39l2.66-.47 3.764 21.37-2.66.47z"/>
           <g name="flag1">
