@@ -69,7 +69,7 @@ class Animation8 extends Component {
 
     return (
       <div className={classes}>
-        <div style={{maxWidth:'850px'}}>
+        <div style={{maxWidth:'900px'}}>
           <Headline name="header" size="large" strong={true}>
             Transformation journey to Intelligent Venues
           </Headline>
