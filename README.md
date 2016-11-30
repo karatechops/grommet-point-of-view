@@ -1,4 +1,4 @@
-# Grommet point of view infographic template
+# Grommet point of view infographic example
 
 This is the source code for the HPE Intelligent Venue interactive infographic. To run the website execute the following:
 
